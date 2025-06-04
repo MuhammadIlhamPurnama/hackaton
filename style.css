@@ -1,0 +1,163 @@
+body {
+  background: URL('asset/bg.jpg');
+  background-size: 100% 140%;
+  background-repeat: no-repeat;
+  background-size: fit;
+
+  font-family: Arial, sans-serif;
+  color: #EAEFEF;
+  margin: 0;
+  padding: 0;
+}
+
+.progress-wrapper {
+  width: 100%;
+  height: 25px;
+  background-color: #EAEFEF;
+  border: 2px solid #333446;
+  border-radius: 40px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #7F8CAA;
+  transition: width 1s linear;
+}
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animasi keyframes untuk gradien bergerak */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+    }
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+
+  background: rgba(50, 50, 60, 0.75); /* transparan gelap */
+  backdrop-filter: blur(8px);          /* efek blur di belakang container */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  color: #EAEFEF;     
+  
+}
+
+
+    h1 {
+      text-align: center;
+      color: #EAEFEF;
+    }
+
+   
+    audio {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .choice {
+      background-color: #B8CFCE;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      cursor: pointer;
+      color: #333446;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    padding: 30px 40px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    color: #EAEFEF;
+    background-color: #333446;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    opacity: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  .popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .popup.correct {
+    background-color: #7F8CAA;
+    border: 3px solid #B8CFCE;
+  }
+
+  .popup.wrong {
+    background-color: #B84A62;
+    border: 3px solid #EAEFEF;
+  }
+
+.choice:hover {
+  background-color: #EAEFEF;
+  box-shadow: 0 4px 15px rgba(234, 239, 239, 0.6);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+    .choices button {
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Feedback warna jawaban benar */
+.choice.correct {
+  background-color: #4caf50 !important;
+  box-shadow: 0 0 10px #4caf50aa;
+  color: #eaf6ea;
+  pointer-events: none;
+}
+
+/* Feedback warna jawaban salah */
+.choice.wrong {
+  background-color: #e74c3c !important;
+  box-shadow: 0 0 10px #e74c3caa;
+  color: #f9d6d5;
+  pointer-events: none;
+}
