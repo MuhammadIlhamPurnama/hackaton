@@ -84,7 +84,6 @@
     const scoreDisplay = document.getElementById('score-display');
     scoreDisplay.textContent = score;
     const timerDisplay = document.getElementById('timer');
-    let timeLeft = 15;
 
     // Sound effects
     const clickSound = document.getElementById('click-sound');
@@ -124,6 +123,9 @@
         progressBar.style.width = percent + '%';
 
         if (timeLeft <= 10 && timeLeft > 0) {
+          tickSound.volume = 0.8;
+          tickSound.muted = false
+          tickSound.load();
           tickSound.play();
         }
 
